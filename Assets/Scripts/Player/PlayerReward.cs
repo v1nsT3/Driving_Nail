@@ -19,7 +19,7 @@ public class PlayerReward : MonoBehaviour
 
     public void SetSeriesForGreatHit()
     {
-        if (++_currentSeriesIndex > _series.Count - 1)
+        if (_currentSeriesIndex + 1> _series.Count - 1)
             _currentSeriesIndex = 0;
 
         _currentSeriesIndex++;
