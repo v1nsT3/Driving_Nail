@@ -52,7 +52,7 @@ public class Nail : MonoBehaviour
 
     public void Move()
     {
-        _tween = transform.DOMoveY(transform.position.y - _offsetMoveY, _durationMove);
+        _tween = transform.DOMove(transform.position + (transform.forward * -_offsetMoveY), _durationMove);
     }
 
     public void Break()

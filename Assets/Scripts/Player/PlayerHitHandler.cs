@@ -6,6 +6,7 @@ public class PlayerHitHandler : MonoBehaviour
 {
     [SerializeField] private Accuracy _accuracy;
     [SerializeField] private Stamina _stamina;
+    [SerializeField] private ParticleSystem _hitEffect;
 
     private Player _player;
     private PlayerReward _playerReward;
@@ -36,6 +37,9 @@ public class PlayerHitHandler : MonoBehaviour
     {
         if (_currentNail.gameObject.activeSelf == false)
             return;
+
+        ParticleSystem effect = Instantiate(_hitEffect, _currentNail.HatPoint.position, Quaternion.identity);
+        effect.Play();
 
         if (_accuracy.HitValueIsRange(hitValue))
         {
